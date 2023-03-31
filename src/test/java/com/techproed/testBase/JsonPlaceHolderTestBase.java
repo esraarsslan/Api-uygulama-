@@ -1,6 +1,7 @@
 package com.techproed.testBase;
 
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
@@ -12,7 +13,7 @@ public class JsonPlaceHolderTestBase {
         @Before
         public void setup(){
 
-            spec01=new RequestSpecBuilder().
+            spec01=new RequestSpecBuilder().setContentType(ContentType.JSON).
                     setBaseUri("https://jsonplaceholder.typicode.com").
                     build();
 
